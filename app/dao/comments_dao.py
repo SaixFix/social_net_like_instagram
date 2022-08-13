@@ -6,7 +6,7 @@ class CommentsDAO:
     def __init__(self, path):
         self.path = path
 
-    def load_data(self):
+    def load_data(self) -> list[dict]:
         with open(self.path, 'r', encoding='utf-8') as file:
             data = json.load(file)
         return data
