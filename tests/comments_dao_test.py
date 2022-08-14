@@ -30,3 +30,4 @@ class TestCommentsDAO:
         """
         comments = comments_dao.get_comments_by_post_id(1)
         assert comments != ValueError, "такого поста нет или у него нет комментариев"
+

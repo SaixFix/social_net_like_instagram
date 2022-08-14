@@ -344,6 +344,14 @@ textarea {
 	margin-bottom: 27px
 }
 
+.item__descr1 {
+	width: 350px;
+	white-space: nowrap;
+	overflow: hidden;
+  	text-overflow: ellipsis;
+	margin-bottom: 2px
+}
+
 .item__descr {
 	margin-bottom: 2px
 }

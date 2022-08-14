@@ -6,3 +6,5 @@ app.register_blueprint(main_blueprint)
 
 if __name__ == "__main__":
     app.run()
+
+

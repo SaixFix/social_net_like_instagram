@@ -17,13 +17,18 @@ class CommentsDAO:
         """
         all_comments = self.load_data()
         comments = []
+        post_id_input = int(post_id)
 
         for comment in all_comments:
             current_comment = comment['post_id']
-            if current_comment == post_id:
+            if current_comment == post_id_input:
                 comments.append(comment)
 
-        if len(comments) == 0 or type(post_id) != int:
+        if len(comments) == 0:
             raise ValueError("такого поста нет или у него нет комментариев")
         else:
             return comments
+
+
+# test = CommentsDAO("../../data/comments.json")
+# print(test.get_comments_by_post_id('5'))

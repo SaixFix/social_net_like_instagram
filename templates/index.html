@@ -17,8 +17,8 @@
         </svg>
       </a>
       <a href="/bookmarks.html" class="header__bookmark-btn">
-        <img src="img/bookmark.png" alt="" class="header__bookmark-icon" width="28">
-        <span class="header__bookmark-counter">3</span>
+        <img src="/static/img/bookmark.png" alt="" class="header__bookmark-icon" width="28">
+        <span class="header__bookmark-counter">0</span>
       </a>
     </div>
   </header>
@@ -30,7 +30,7 @@
         <input type="search" class="search__input">
       </form>
     </div>
-    {% for post in posts %}
+      {% for post in posts %}
     <section class="items">
       <div class="items__item item">
         <div class="item__top">
@@ -41,20 +41,20 @@
             <span class="item__username">{{ post.poster_name }}</span>
           </a>
         </div>
-        <a href="{{ post.pic }}" class="item__post-link">
-          <img src="/static/img/post1.jpg" alt="" width="348" class="item__post-img">
+        <a href="/post.html" class="item__post-link">
+          <img src="{{ post.pic }}" alt="" width="348" class="item__post-img">
         </a>
-        <p class="item__descr">{{ post.content }}</p>
+        <p class="item__descr1">{{ post.content }}</p>
         <div class="item__post-info">
           <div class="item__counter">
-            <img src="img/eye.png" alt="" class="item__counter-icon" width="26">
-            <span class="item__counter-text">212</span>
+            <img src="/static/img/eye.png" alt="" class="item__counter-icon" width="26">
+            <span class="item__counter-text">286</span>
           </div>
         </div>
         <div class="item__post-bottom">
-          <a href="/post.html" class="item__btn-more">Подробнее</a>
+          <a href="/posts/{{ post.pk }}" class="item__btn-more">Подробнее</a>
           <button type="button" class="item__bookmark-btn">
-            <img src="img/bookmark.png" alt="" class="item__bookmark-icon" width="24">
+            <img src="/static/img/bookmark.png" alt="" class="item__bookmark-icon" width="24">
           </button>
         </div>
       </div>
