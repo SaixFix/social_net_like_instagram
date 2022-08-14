@@ -26,8 +26,8 @@
   <main class="container">
 
     <div class="search">
-      <form action="/search" class="search__form">
-        <input type="search" class="search__input">
+      <form action="/search" method="get" class="search__form">
+        <input type="search" name="s" class="search__input">
       </form>
     </div>
       {% for post in posts %}
@@ -41,7 +41,7 @@
             <span class="item__username">{{ post.poster_name }}</span>
           </a>
         </div>
-        <a href="/post.html" class="item__post-link">
+        <a href="/posts/{{ post.pk }}" class="item__post-link">
           <img src="{{ post.pic }}" alt="" width="348" class="item__post-img">
         </a>
         <p class="item__descr1">{{ post.content }}</p>

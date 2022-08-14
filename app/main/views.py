@@ -34,7 +34,7 @@ def search_page():
 
     s = request.args['s']
     posts = posts_dao.search_for_posts(s)
-    return render_template('search.html', posts=posts)
+    return render_template('search.html', posts=posts, request=request)
 
 
 
