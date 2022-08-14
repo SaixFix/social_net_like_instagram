@@ -1,11 +1,11 @@
 from flask import Blueprint, request, render_template
 import logging
-from app.dao.posts_dao import PostsDao
+from app.dao.posts_dao import PostsDAO
 #создаем блюпринт
 main_blueprint = Blueprint('main_blueprint', __name__, template_folder='templates')
 
 #создаем DAO
-posts_dao = PostsDao("./data/data.json")
+posts_dao = PostsDAO("./data/data.json")
 
 
 @main_blueprint.route('/')
