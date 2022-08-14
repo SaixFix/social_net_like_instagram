@@ -31,10 +31,22 @@ def post_page(postid):
 
 @main_blueprint.route('/search/')
 def search_page():
-
+    """
+    Страница выводит результаты поиска по ключевому слову
+    """
     s = request.args['s']
     posts = posts_dao.search_for_posts(s)
     return render_template('search.html', posts=posts, request=request)
+
+
+@main_blueprint.route('/user-feed/<username>')
+def user_feed_page(username):
+    """
+    Страница выводит посты пользователя по заданному имени
+    """
+    user_name = username
+    user_posts = posts_dao.get_posts_by_user(username)
+    return render_template('user-feed.html', posts=user_posts, user_name=user_name)
 
 
 
