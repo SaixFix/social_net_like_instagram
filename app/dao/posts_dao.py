@@ -6,12 +6,15 @@ class PostsDAO:
     def __init__(self, path):
         self.path = path
 
-    def load_data(self):
+    def load_data(self) -> list[dict]:
+        """
+        читаем из json файла
+        """
         with open(self.path, 'r', encoding='utf-8') as file:
             data = json.load(file)
         return data
 
-    def get_all(self):
+    def get_all(self) -> list[dict]:
         """
         возвращает все посты
         """
@@ -36,7 +39,7 @@ class PostsDAO:
         else:
             return user_posts
 
-    def search_for_posts(self, query) -> list:
+    def search_for_posts(self, query: str) -> list:
         """
         возвращает список постов по ключевому слову
         """

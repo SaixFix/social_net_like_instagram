@@ -3,6 +3,7 @@ from app.dao.comments_dao import CommentsDAO
 import pytest
 
 
+#задаем фикстуру бля проверки CommentsDAO
 @pytest.fixture()
 def comments_dao():
     comments_dao_instance = CommentsDAO("./data/comments.json")
@@ -13,6 +14,7 @@ def comments_dao():
 keys_should_be = {'post_id', 'commenter_name', 'comment', 'pk'}
 
 
+#тестируем CommentsDAO
 class TestCommentsDAO:
 
     def test_load_data(self, comments_dao):

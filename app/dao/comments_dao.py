@@ -7,6 +7,9 @@ class CommentsDAO:
         self.path = path
 
     def load_data(self) -> list[dict]:
+        """
+        читаем из json файла
+        """
         with open(self.path, 'r', encoding='utf-8') as file:
             data = json.load(file)
         return data
@@ -23,12 +26,8 @@ class CommentsDAO:
             current_comment = comment['post_id']
             if current_comment == post_id_input:
                 comments.append(comment)
-
+        
         if len(comments) == 0:
             raise ValueError("такого поста нет или у него нет комментариев")
         else:
             return comments
-
-
-# test = CommentsDAO("../../data/comments.json")
-# print(test.get_comments_by_post_id('5'))

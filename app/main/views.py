@@ -1,5 +1,4 @@
 from flask import Blueprint, request, render_template
-import logging
 from app.dao.posts_dao import PostsDAO
 from app.dao.comments_dao import CommentsDAO
 #создаем блюпринт
@@ -47,7 +46,6 @@ def user_feed_page(username):
     user_name = username
     user_posts = posts_dao.get_posts_by_user(username)
     return render_template('user-feed.html', posts=user_posts, user_name=user_name)
-
 
 
 
