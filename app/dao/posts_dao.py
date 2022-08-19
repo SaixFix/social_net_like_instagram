@@ -1,6 +1,7 @@
 import json
 
 
+#класс DAO для постов
 class PostsDAO:
 
     def __init__(self, path):

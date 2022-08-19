@@ -1,6 +1,7 @@
 import json
 
 
+#класс DAO для комментариев
 class CommentsDAO:
 
     def __init__(self, path):
