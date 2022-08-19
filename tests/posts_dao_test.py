@@ -3,7 +3,7 @@ from app.dao.posts_dao import PostsDAO
 import pytest
 
 
-#задаем фикстуру бля проверки CommentsDAO
+#задаем фикстуру для проверки PostsDAO
 @pytest.fixture()
 def posts_dao():
     posts_dao_instance = PostsDAO("./data/data.json")
@@ -15,7 +15,7 @@ keys_should_be = {'poster_name', 'poster_avatar', 'pic',
                   'content', 'views_count', 'likes_count', 'pk'}
 
 
-#тестируем CommentsDAO
+#тестируем PostsDAO
 class TestPostsDAO:
 
     def test_get_all(self, posts_dao):

@@ -3,7 +3,7 @@ from app.dao.comments_dao import CommentsDAO
 import pytest
 
 
-#задаем фикстуру бля проверки CommentsDAO
+#задаем фикстуру для проверки CommentsDAO
 @pytest.fixture()
 def comments_dao():
     comments_dao_instance = CommentsDAO("./data/comments.json")
